@@ -1,0 +1,214 @@
+{
+    "cells": [
+        {
+            "language": "markdown",
+            "source": [
+                "<a id=\"hw\"></a>\n# Homework"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Complete the Following Coding Questions in JavaScript."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### Question #1"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Write a function that takes a string (sentence) and an array of strings (in this example dog_names) and check if one of the list members (dog names) is in the string (sentence). Return an array of the dog names found in the array\n\nhint: filter, includes \n\nfor information on includes see:\n\n[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "function findName (sentence, dogNames){\n    return dogNames.filter(dogName => sentence.includes(dogName));\n}\n\nvar dogNames = [\"Max\",\"Fido\",\"Gizmo\",\"Nala\"];\n//Test Cases\n\nvar testString1 = \"Hello, my dog is Max, and they have purple eyes!\";\nconsole.log(findName(testString1, dogNames)); \n//Expect ['Max']\n\nvar testString2 = \"My Dog is fast, her name is Tippi\";\nconsole.log(findName(testString2, dogNames));\n//Expect []\n\nvar testString3 = \"Come here Fido and Gizmo come here\";\nconsole.log(findName(testString3, dogNames));\n//Expect['Fido','Gizmo']\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "[ 'Max' ]",
+                                "[ 'Fido', 'Gizmo' ]",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### Question #2"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Write a Function using `map` to convert an array of number from inches to feet \n\n1 foot = 12 inches "
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "function inchesToFeet(inchesArray) {\n    return inchesArray.map(heightInInches => heightInInches / 12);\n}\n\nvar heightsInInches = [66, 64, 60, 52, 72, 80, 51]\nvar heightsInFeet = inchesToFeet(heightsInInches);\nconsole.log(heightsInFeet);\n// Expect\n// [\n//   5.5,\n//   5.333333333333333,\n//   5,\n//   4.333333333333333,\n//   6,\n//   6.666666666666667,\n//   4.25\n// ]\n\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "[",
+                                "  5.5,",
+                                "  5.333333333333333,",
+                                "  5,",
+                                "  4.333333333333333,",
+                                "  6,",
+                                "  6.666666666666667,",
+                                "  4.25",
+                                "]",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### Question #3"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Using the Ternary Operator and map create an array that adds `is eating pizza` to every name from the array `tmnt` that ends with `o` and add `is being rude` to any other name."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "var tmnt = [\"Leonardo\", \"Michelangelo\", \"Donatello\", \"Raphael\"];\n\nvar tmntRude = tmnt.map(name => \n    name[name.length - 1] === 'o' ? `${name} is eating pizza` : `${name} is being rude`\n);\n\nconsole.log(tmntRude);\n// expect\n// [\n//   'Leonardo is eating pizza',\n//   'Michelangelo is eating pizza',\n//   'Donatello is eating pizza',\n//   'Raphael is being rude'\n// ]\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "[",
+                                "  'Leonardo is eating pizza',",
+                                "  'Michelangelo is eating pizza',",
+                                "  'Donatello is eating pizza',",
+                                "  'Raphael is being rude'",
+                                "]",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### Question #4"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Write an arrow function to find the max number in a list.  Do not use the Math.max Function.\n\nThe List will be all positive numbers"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "var findAMax=[123,5436,45784,1234,34,65,234125,645,3452,13216,49]\n\nconst findEven = num => {\n    return num.filter(num % 2 === 0);\n}\n\nvar evenNumbers = findEven(findAMax);\nconsole.log(evenNumbers);\n\n\n//Expect\n// 234125\n\n\n\n\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.error",
+                            "value": {
+                                "name": "TypeError",
+                                "message": "boolean false is not a function",
+                                "stack": "    at Array.filter (<anonymous>)\n    at findEven (<Cell 14> [4, 11])\n    at <Cell 14> [7, 0]\n    at <Cell 14> [9, 46]\n    at Script.runInContext (node:vm:133:12)\n    at Script.runInNewContext (node:vm:138:17)\n    at Object.runInNewContext (node:vm:296:38)\n    at C (/Users/steveagboola/.vscode/extensions/donjayamanne.typescript-notebook-2.0.6/out/extension/server/index.js:2:113345)\n    at t.execCode (/Users/steveagboola/.vscode/extensions/donjayamanne.typescript-notebook-2.0.6/out/extension/server/index.js:2:114312)\n    at k.<anonymous> (/Users/steveagboola/.vscode/extensions/donjayamanne.typescript-notebook-2.0.6/out/extension/server/index.js:2:142156)"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### Question #5"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "At the <b>end</b> of the <b>third</b> Iteration (the third time the loop has ran) of this for Loop define the state of all the variables used in the cell"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "var bingo = \"B-I-N-G-O\"\nvar ognib = \"\"\nfor(let i=bingo.length-1; i>=0; i--){\n    ognib+=(bingo[i])\n    //define state from this line on the third iteration\n}"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "//bingo value is\n\n//ognib value is\n\n// i value is\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### Question #6"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Complete 3 Codewars problems using JavaScript, start with ones you have already solved in python.  Paste a link hear to the 3 questions you completed"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "1:https://www.codewars.com/kata/56dec885c54a926dcd001095/javascript\n\n\n2:https://www.codewars.com/kata/50654ddff44f800200000004/solutions/javascript?filter=me&sort=best_practice&invalids=false\n\n\n3:https://www.codewars.com/kata/5ab6538b379d20ad880000ab/solutions/javascript?filter=me&sort=best_practice&invalids=false\n\n"
+            ],
+            "outputs": []
+        }
+    ]
+}
